@@ -108,5 +108,15 @@ namespace UrunStokTakip.Controllers
             var kritik = db.Urun.Where(x=>x.Stok<=50).ToList();
             return View(kritik);
         }
+
+        public PartialViewResult StokCount()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var count = db.Urun.Where(x => x.Stok < 50).Count();
+                ViewBag.count = count;
+            }
+            return PartialView();
+        }
     }
 }

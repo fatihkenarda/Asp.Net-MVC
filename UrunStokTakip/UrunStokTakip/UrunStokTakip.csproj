@@ -763,6 +763,7 @@
     <Content Include="Views\Urun\Ekle.cshtml" />
     <Content Include="Views\Urun\Guncelle.cshtml" />
     <Content Include="Views\Urun\KritikStok.cshtml" />
+    <Content Include="Views\Urun\StokCount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

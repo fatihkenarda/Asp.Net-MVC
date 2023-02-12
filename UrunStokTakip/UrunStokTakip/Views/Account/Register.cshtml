@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container"> 
+        <br/>
+        <h2>Kayıt Ol</h2>
+
+        <div class="form-group col-md-3 container">
+            <form method="post">
+                <label>Ad</label>
+                <input type="text" name="Ad" class="form-control" required/>
+                <br />
+
+                <label>Soyad</label>
+                <input type="text" name="Soyad" class="form-control" required/>
+                <br />
+
+                <label>E-mail</label>
+                <input type="text" name="Email" class="form-control" required/>
+                <br />
+
+                <label>Kullanıcı Ad</label>
+                <input type="text" name="KullaniciAd" class="form-control" required/>
+                <br />
+
+                <label>Şifre</label>
+                <input type="password" name="Sifre" class="form-control" required/>
+                <br />
+
+                <label>Şifre Tekrar</label>
+                <input type="password" name="SifreTekrar" class="form-control" required/>
+                <br />
+
+                <button class="btn btn-secondary">Kayıt Ol</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

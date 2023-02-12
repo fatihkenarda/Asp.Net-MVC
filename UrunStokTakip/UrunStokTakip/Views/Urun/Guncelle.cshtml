@@ -1,0 +1,58 @@
+﻿@model UrunStokTakip.Models.Urun
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Ad</label>
+                    <input type="text" name="Ad" class="form-control" value="@Model.Ad" />
+                </div>
+
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" name="Aciklama" class="form-control" value="@Model.Aciklama" />
+                </div>
+
+                <div class="form-group">
+                    <label>Önceki Resim</label>
+                    <img src="~/Content/Image/@Model.Resim" width="90" height="90" />
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Resim", new { @class = "control-label col-md-2" })
+                    <input type="file" name="File" />
+                </div>
+
+                <div class="form-group">
+                    <label>Fiyat</label>
+                    <input type="text" name="Fiyat" class="form-control" value="@Model.Fiyat" />
+                </div>
+
+                <div class="form-group">
+                    <label>Stok</label>
+                    <input type="text" name="Stok" class="form-control" value="@Model.Stok" />
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Popüler", new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(x => x.Populer)
+                </div>
+
+                <div class="form-group">
+                    <label>Kategori</label>
+                    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.ktgr, new { @class = "form-control" })
+                </div>
+
+                <button class="btn btn-primary" type="submit">Güncelle</button>
+                <a href="/Urun/Index">Ürün Listesi</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+

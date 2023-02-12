@@ -1,0 +1,53 @@
+﻿@model UrunStokTakip.Models.Urun
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Ekle", "Urun", FormMethod.Post, new { enctype = "multipart/Form-data" })) // MVC 'nin bize verdiği formu kullanmak için yazıyoruz.
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Ad</label>
+                    <input type="text" name="Ad" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" name="Aciklama" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Resim", new { @class = "control-label col-md-2" })
+                    <input type="file" name="File" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Stok</label>
+                    <input type="text" name="Stok" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Fiyat</label>
+                    <input type="text" name="Fiyat" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Popüler", new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(x => x.Populer)
+                </div>
+
+                <div class="form-group">
+                    <label>Kategori</label>
+                    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.ktgr, new { @class = "form-control" })
+                </div>
+
+                <button class="btn btn-primary" type="submit">Ekle</button>
+                <a href="/Urun/Index">Ürün Listesi</a>
+
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,20 @@
+﻿@using UrunStokTakip.Models
+@model List<Urun>
+@{
+    ViewBag.Title = "KritikStok";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Bilgisi</th>&nbsp;
+        <th>Stok</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Ad</td>
+            <td>@item.Stok</td>
+        </tr>
+    }
+</table>

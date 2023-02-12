@@ -1,0 +1,77 @@
+﻿@using UrunStokTakip.Models
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div style="width:25%; float:left">
+            @Html.TextBox("ara", null, new { @class = "form-control", @placeholder = "Ürün adı veya Açıklama arayınız" })
+            <div style="float:left">
+                <input type="submit" name="btn" value="Ara" class="btn btn-info" />
+            </div>
+        </div>
+    }
+
+</div>
+
+<br />
+<a href="/Urun/Ekle" class="btn btn-primary">Ekle</a>
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Resim</th>
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Popüler</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+        <th>Kategori</th>
+        @if (User.IsInRole("A"))
+        {
+            <th>Sil</th>
+            <th>Düzenle</th>
+        }
+        @if (User.IsInRole("U"))
+        {
+            <th>Sepete Ekle</th>
+        }
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="~/Content/Image/@item.Resim" width="80" height="80" /></td>
+            <td>@item.Ad</td>
+            <td>@item.Aciklama</td>
+            <td>
+                @if (item.Populer == true)
+                {
+                    <label class="btn btn-success">Evet</label>
+                }
+                @if (item.Populer == false)
+                {
+                    <label class="btn btn-danger">Hayır</label>
+                }
+            </td>
+            <td>@item.Fiyat</td>
+            <td>@item.Stok</td>
+            <td>@item.Kategori.Ad</td>
+            @if (User.IsInRole("A"))
+            {
+                <td>@Html.ActionLink("Sil", "Sil", new { ID=item.UrunID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz ?')" })</td>
+                <td><a href="/Urun/Guncelle/@item.UrunID" class="btn btn-warning">Düzenle</a></td>
+            }
+            @if (User.IsInRole("U"))
+            {
+                <td><a href="/Sepet/SepeteEkle/@item.UrunID" class="btn btn-success">Sepete Ekle</a></td>
+            }
+
+        </tr>
+    }
+</table>

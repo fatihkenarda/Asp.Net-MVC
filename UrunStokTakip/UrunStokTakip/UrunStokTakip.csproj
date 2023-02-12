@@ -1,0 +1,819 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1969017C-F8AC-4740-A81C-A97B00926DE5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UrunStokTakip</RootNamespace>
+    <AssemblyName>UrunStokTakip</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Image\1Fotoğraf-Makinesi.png" />
+    <Content Include="Content\Image\62021a4f3dca22.90470433_hegqlpiofjnkm_500.jpg" />
+    <Content Include="Content\Image\samsung-galaxy-s20-5g-r1.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="NiceAdmin\404.html" />
+    <Content Include="NiceAdmin\assets\chart-master\Chart.js" />
+    <Content Include="NiceAdmin\assets\chart-master\Chart.min.js" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\Chart.js" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\index.html" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\prettify.css" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\prettify.js" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\styles.css" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\bar.html" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\doughnut.html" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\line.html" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\pie.html" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\polarArea.html" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\radar.html" />
+    <Content Include="NiceAdmin\assets\chart-master\samples\sixup.html" />
+    <Content Include="NiceAdmin\assets\chart-master\site\assets\6charts.png" />
+    <Content Include="NiceAdmin\assets\chart-master\site\assets\Chart.js" />
+    <Content Include="NiceAdmin\assets\chart-master\site\assets\effects.js" />
+    <Content Include="NiceAdmin\assets\chart-master\site\assets\excanvas.js" />
+    <Content Include="NiceAdmin\assets\chart-master\site\assets\html.png" />
+    <Content Include="NiceAdmin\assets\chart-master\site\assets\simple.png" />
+    <Content Include="NiceAdmin\assets\chart-master\site\index.html" />
+    <Content Include="NiceAdmin\assets\chart-master\site\styles.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\build-config.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\ckeditor.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\config.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\contents.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\af.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ar.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\bg.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\bn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\bs.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ca.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\cs.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\cy.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\da.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\de.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\el.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\en-au.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\en-ca.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\en-gb.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\en.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\eo.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\es.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\et.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\eu.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\fa.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\fi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\fo.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\fr-ca.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\fr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\gl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\gu.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\he.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\hi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\hr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\hu.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\is.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\it.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ja.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ka.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\km.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ko.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ku.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\lt.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\lv.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\mk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\mn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ms.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\nb.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\nl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\no.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\pl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\pt-br.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\pt.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ro.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ru.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\sk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\sl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\sr-latn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\sr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\sv.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\th.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\tr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\ug.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\uk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\vi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\zh-cn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\lang\zh.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\icons.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\ajax.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\api.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\appendto.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\assets\sample.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\divreplace.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\index.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\inlineall.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\inlinebycode.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\readonly.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\replacebyclass.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\replacebycode.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\sample.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\sample.js" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\tabindex.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\uicolor.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\uilanguages.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\dialog.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\editor.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\icons.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\images\close.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="NiceAdmin\assets\ckeditor\styles.js" />
+    <Content Include="NiceAdmin\assets\fullcalendar\changelog.txt" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\agenda-views.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\basic-views.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\cupertino\theme.css" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\default.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\external-dragging.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\gcal.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\json-events.php" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\json.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\selectable.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\demos\theme.html" />
+    <Content Include="NiceAdmin\assets\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.js" />
+    <Content Include="NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.print.css" />
+    <Content Include="NiceAdmin\assets\fullcalendar\fullcalendar\gcal.js" />
+    <Content Include="NiceAdmin\assets\fullcalendar\GPL-LICENSE.txt" />
+    <Content Include="NiceAdmin\assets\fullcalendar\jquery\jquery-1.8.1.min.js" />
+    <Content Include="NiceAdmin\assets\fullcalendar\jquery\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="NiceAdmin\assets\fullcalendar\MIT-LICENSE.txt" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\examples\excanvas.js" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\examples\index.html" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\examples\style.css" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\img\easy-pie-chart.png" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="NiceAdmin\assets\jquery-knob\index.html" />
+    <Content Include="NiceAdmin\assets\jquery-knob\js\jquery.knob.js" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="NiceAdmin\assets\jquery-ui\jquery-ui-1.10.1.custom.css" />
+    <Content Include="NiceAdmin\assets\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="NiceAdmin\assets\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="NiceAdmin\assets\jquery-ui\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="NiceAdmin\assets\jquery-ui\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\area-as-line.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\area.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\bar-colors.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\bar-no-axes.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\bar.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\days.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\decimal-custom-hover.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\diagonal-xlabels-bar.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\diagonal-xlabels.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\donut-colors.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\donut-formatter.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\donut.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\dst.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\events.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\goals.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\lib\example.css" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\lib\example.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\lib\prettify.css" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\lib\prettify.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\months-no-smooth.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\negative.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\no-grid.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\non-continuous.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\non-date.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\quarters.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\stacked_bars.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\timestamps.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\updating.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\weeks.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\years.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\examples\_template.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\grunt.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\morris.css" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\morris.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\morris.min.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\raphael-min.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\specs.html" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\chai-1.3.0.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\chai-jquery-1.1.0.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\jquery-1.8.2.min.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\mocha-1.6.0.css" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\mocha-1.6.0.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\raphael-2.1.0.min.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\sinon-1.5.0.js" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\vendor\sinon-chai-2.1.2.js" />
+    <Content Include="NiceAdmin\basic_table.html" />
+    <Content Include="NiceAdmin\blank.html" />
+    <Content Include="NiceAdmin\buttons.html" />
+    <Content Include="NiceAdmin\chart-chartjs.html" />
+    <Content Include="NiceAdmin\contact.html" />
+    <Content Include="NiceAdmin\contactform\contactform.js" />
+    <Content Include="NiceAdmin\contactform\Readme.txt" />
+    <Content Include="NiceAdmin\css\bootstrap-colorpicker.css" />
+    <Content Include="NiceAdmin\css\bootstrap-datepicker.css" />
+    <Content Include="NiceAdmin\css\bootstrap-theme.css" />
+    <Content Include="NiceAdmin\css\bootstrap.min.css" />
+    <Content Include="NiceAdmin\css\daterangepicker.css" />
+    <Content Include="NiceAdmin\css\elegant-icons-style.css" />
+    <Content Include="NiceAdmin\css\font-awesome.css" />
+    <Content Include="NiceAdmin\css\font-awesome.min.css" />
+    <Content Include="NiceAdmin\css\fullcalendar.css" />
+    <Content Include="NiceAdmin\css\jquery-jvectormap-1.2.2.css" />
+    <Content Include="NiceAdmin\css\jquery-ui-1.10.4.min.css" />
+    <Content Include="NiceAdmin\css\line-icons.css" />
+    <Content Include="NiceAdmin\css\owl.carousel.css" />
+    <Content Include="NiceAdmin\css\style-responsive.css" />
+    <Content Include="NiceAdmin\css\style.css" />
+    <Content Include="NiceAdmin\css\widgets.css" />
+    <Content Include="NiceAdmin\css\xcharts.min.css" />
+    <Content Include="NiceAdmin\fonts\ElegantIcons.svg" />
+    <Content Include="NiceAdmin\fonts\fontawesome-webfont.svg" />
+    <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="NiceAdmin\form_component.html" />
+    <Content Include="NiceAdmin\form_validation.html" />
+    <Content Include="NiceAdmin\general.html" />
+    <Content Include="NiceAdmin\grids.html" />
+    <Content Include="NiceAdmin\img\arrow-up.png" />
+    <Content Include="NiceAdmin\img\avatar-mini.jpg" />
+    <Content Include="NiceAdmin\img\avatar-mini2.jpg" />
+    <Content Include="NiceAdmin\img\avatar-mini3.jpg" />
+    <Content Include="NiceAdmin\img\avatar-mini4.jpg" />
+    <Content Include="NiceAdmin\img\avatar1.jpg" />
+    <Content Include="NiceAdmin\img\avatar1_small.jpg" />
+    <Content Include="NiceAdmin\img\bg-1.jpg" />
+    <Content Include="NiceAdmin\img\chart-texture.jpg" />
+    <Content Include="NiceAdmin\img\chat-avatar.jpg" />
+    <Content Include="NiceAdmin\img\chat-avatar2.jpg" />
+    <Content Include="NiceAdmin\img\customSelect-arrow.gif" />
+    <Content Include="NiceAdmin\img\geekslabs.png" />
+    <Content Include="NiceAdmin\img\Germany.png" />
+    <Content Include="NiceAdmin\img\icons\line-icon-c.png" />
+    <Content Include="NiceAdmin\img\icons\line-icon-hover.png" />
+    <Content Include="NiceAdmin\img\icons\line-icon.png" />
+    <Content Include="NiceAdmin\img\icons\search-line-icon.png" />
+    <Content Include="NiceAdmin\img\icons\social.png" />
+    <Content Include="NiceAdmin\img\icons\weather-hover.png" />
+    <Content Include="NiceAdmin\img\icons\weather.png" />
+    <Content Include="NiceAdmin\img\India.png" />
+    <Content Include="NiceAdmin\img\left-arrow.png" />
+    <Content Include="NiceAdmin\img\logo-big.png" />
+    <Content Include="NiceAdmin\img\mail-avatar.jpg" />
+    <Content Include="NiceAdmin\img\profile-avatar.jpg" />
+    <Content Include="NiceAdmin\img\profile-widget-avatar.jpg" />
+    <Content Include="NiceAdmin\img\right-arrow.png" />
+    <Content Include="NiceAdmin\img\Russia.png" />
+    <Content Include="NiceAdmin\img\sample-img-1.jpg" />
+    <Content Include="NiceAdmin\img\sample-img-2.png" />
+    <Content Include="NiceAdmin\img\sample-img-3.png" />
+    <Content Include="NiceAdmin\img\search-icon.jpg" />
+    <Content Include="NiceAdmin\img\Spain.png" />
+    <Content Include="NiceAdmin\img\user.jpg" />
+    <Content Include="NiceAdmin\img\user22.png" />
+    <Content Include="NiceAdmin\index.html" />
+    <Content Include="NiceAdmin\js\additional-methods.min.js" />
+    <Content Include="NiceAdmin\js\bootstrap-colorpicker.js" />
+    <Content Include="NiceAdmin\js\bootstrap-datepicker.js" />
+    <Content Include="NiceAdmin\js\bootstrap-switch.js" />
+    <Content Include="NiceAdmin\js\bootstrap-wysiwyg-custom.js" />
+    <Content Include="NiceAdmin\js\bootstrap-wysiwyg.js" />
+    <Content Include="NiceAdmin\js\bootstrap.js" />
+    <Content Include="NiceAdmin\js\bootstrap.min.js" />
+    <Content Include="NiceAdmin\js\calendar-custom.js" />
+    <Content Include="NiceAdmin\js\chartjs-custom.js" />
+    <Content Include="NiceAdmin\js\charts-flot.js" />
+    <Content Include="NiceAdmin\js\charts-other.js" />
+    <Content Include="NiceAdmin\js\charts-xcharts.js" />
+    <Content Include="NiceAdmin\js\charts.js" />
+    <Content Include="NiceAdmin\js\daterangepicker.js" />
+    <Content Include="NiceAdmin\js\dynamic-table.js" />
+    <Content Include="NiceAdmin\js\easy-pie-chart.js" />
+    <Content Include="NiceAdmin\js\excanvas.min.js" />
+    <Content Include="NiceAdmin\js\form-component.js" />
+    <Content Include="NiceAdmin\js\form-validation-script.js" />
+    <Content Include="NiceAdmin\js\fullcalendar.js" />
+    <Content Include="NiceAdmin\js\fullcalendar.min.js" />
+    <Content Include="NiceAdmin\js\ga.js" />
+    <Content Include="NiceAdmin\js\gdp-data.js" />
+    <Content Include="NiceAdmin\js\gritter.js" />
+    <Content Include="NiceAdmin\js\html5shiv.js" />
+    <Content Include="NiceAdmin\js\index.js" />
+    <Content Include="NiceAdmin\js\jquery-1.8.3.min.js" />
+    <Content Include="NiceAdmin\js\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="NiceAdmin\js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="NiceAdmin\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="NiceAdmin\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="NiceAdmin\js\jquery.autosize.min.js" />
+    <Content Include="NiceAdmin\js\jquery.customSelect.min.js" />
+    <Content Include="NiceAdmin\js\jquery.flot.pie.js" />
+    <Content Include="NiceAdmin\js\jquery.hotkeys.js" />
+    <Content Include="NiceAdmin\js\jquery.js" />
+    <Content Include="NiceAdmin\js\jquery.localscroll.js" />
+    <Content Include="NiceAdmin\js\jquery.nicescroll.js" />
+    <Content Include="NiceAdmin\js\jquery.placeholder.min.js" />
+    <Content Include="NiceAdmin\js\jquery.rateit.min.js" />
+    <Content Include="NiceAdmin\js\jquery.scrollTo.min.js" />
+    <Content Include="NiceAdmin\js\jquery.slimscroll.min.js" />
+    <Content Include="NiceAdmin\js\jquery.smartWizard.js" />
+    <Content Include="NiceAdmin\js\jquery.sparkline-11.js" />
+    <Content Include="NiceAdmin\js\jquery.sparkline.js" />
+    <Content Include="NiceAdmin\js\jquery.stepy.js" />
+    <Content Include="NiceAdmin\js\jquery.tagsinput.js" />
+    <Content Include="NiceAdmin\js\jquery.validate.min.js" />
+    <Content Include="NiceAdmin\js\lte-ie7.js" />
+    <Content Include="NiceAdmin\js\moment.js" />
+    <Content Include="NiceAdmin\js\morris-script.js" />
+    <Content Include="NiceAdmin\js\morris.min.js" />
+    <Content Include="NiceAdmin\js\owl.carousel.js" />
+    <Content Include="NiceAdmin\js\scripts.js" />
+    <Content Include="NiceAdmin\js\sliders.js" />
+    <Content Include="NiceAdmin\js\sparkline-chart.js" />
+    <Content Include="NiceAdmin\js\sparklines.js" />
+    <Content Include="NiceAdmin\js\xcharts.min.js" />
+    <Content Include="NiceAdmin\login.html" />
+    <Content Include="NiceAdmin\profile.html" />
+    <Content Include="NiceAdmin\readme.txt" />
+    <Content Include="NiceAdmin\widgets.html" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="NiceAdmin\assets\chart-master\.gitignore" />
+    <Content Include="NiceAdmin\assets\chart-master\component.json" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\prettify.less" />
+    <Content Include="NiceAdmin\assets\chart-master\docs\styles.less" />
+    <Content Include="NiceAdmin\assets\chart-master\LICENSE.md" />
+    <Content Include="NiceAdmin\assets\chart-master\readme.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\CHANGES.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\LICENSE.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\scayt\README.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\plugins\wsc\README.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\README.md" />
+    <Content Include="NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="NiceAdmin\assets\ckeditor\skins\moono\readme.md" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\jquery.easy-pie-chart.coffee" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\Makefile" />
+    <Content Include="NiceAdmin\assets\jquery-easy-pie-chart\Readme.md" />
+    <Content Include="NiceAdmin\assets\jquery-knob\README.md" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\.gitignore" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\.travis.yml" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\component.json" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\less\morris.core.less" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.area.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.bar.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.donut.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.grid.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.hover.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\lib\morris.line.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\package.json" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\README.md" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\area\area_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\bar\bar_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\bar\colours.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\commas_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\donut\donut_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\grid\auto_grid_lines_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\grid\set_data_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\grid\y_label_format_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\hover_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\label_series_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\line\line_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\pad_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\lib\parse_time_spec.coffee" />
+    <Content Include="NiceAdmin\assets\morris.js-0.4.3\spec\support\placeholder.coffee" />
+    <Content Include="NiceAdmin\fonts\ElegantIcons.eot" />
+    <Content Include="NiceAdmin\fonts\ElegantIcons.ttf" />
+    <Content Include="NiceAdmin\fonts\ElegantIcons.woff" />
+    <Content Include="NiceAdmin\fonts\fontawesome-webfont.eot" />
+    <Content Include="NiceAdmin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="NiceAdmin\fonts\fontawesome-webfont.woff" />
+    <Content Include="NiceAdmin\fonts\FontAwesome.otf" />
+    <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UrunController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kategori.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kullanici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Satis.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sepet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Urun.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roller\AdminRolProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Urun\Index.cshtml" />
+    <Content Include="Views\Urun\Ekle.cshtml" />
+    <Content Include="Views\Urun\Guncelle.cshtml" />
+    <Content Include="Views\Urun\KritikStok.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60086</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60086/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

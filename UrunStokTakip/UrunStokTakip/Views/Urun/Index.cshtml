@@ -9,7 +9,9 @@
     @using (Html.BeginForm())
     {
         <div style="width:25%; float:left">
-            @Html.TextBox("ara", null, new { @class = "form-control", @placeholder = "Ürün adı veya Açıklama arayınız" })
+            <div style="float:left; width:80%">
+                @Html.TextBox("ara", null, new { @class = "form-control", @placeholder = "Ürün adı veya Açıklama arayınız" })
+            </div>
             <div style="float:left">
                 <input type="submit" name="btn" value="Ara" class="btn btn-info" />
             </div>
@@ -64,7 +66,7 @@
             <td>@item.Kategori.Ad</td>
             @if (User.IsInRole("A"))
             {
-                <td>@Html.ActionLink("Sil", "Sil", new { ID=item.UrunID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz ?')" })</td>
+                <td>@Html.ActionLink("Sil", "Sil", new { ID = item.UrunID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz ?')" })</td>
                 <td><a href="/Urun/Guncelle/@item.UrunID" class="btn btn-warning">Düzenle</a></td>
             }
             @if (User.IsInRole("U"))

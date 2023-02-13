@@ -7,6 +7,7 @@
     <Property Name="KategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ad" Type="nvarchar" MaxLength="50" />
     <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gecerli" Type="bit" />
   </EntityType>
   <EntityType Name="Kullanici">
     <Key>
@@ -65,7 +66,7 @@
     <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Stok" Type="int" />
     <Property Name="Populer" Type="bit" />
-    <Property Name="Resim" Type="nvarchar" MaxLength="50" />
+    <Property Name="Resim" Type="nvarchar(max)" />
     <Property Name="KategoriID" Type="int" />
   </EntityType>
   <Association Name="FK_Satis_Kullanici">

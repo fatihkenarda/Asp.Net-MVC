@@ -8,6 +8,7 @@
     <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Urun" Relationship="Self.FK_Urun_Kategori" FromRole="Kategori" ToRole="Urun" />
+    <Property Name="Gecerli" Type="Boolean" />
   </EntityType>
   <EntityType Name="Kullanici">
     <Key>
@@ -57,7 +58,7 @@
     <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Stok" Type="Int32" />
     <Property Name="Populer" Type="Boolean" />
-    <Property Name="Resim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="KategoriID" Type="Int32" />
     <NavigationProperty Name="Kategori" Relationship="Self.FK_Urun_Kategori" FromRole="Urun" ToRole="Kategori" />
   </EntityType>

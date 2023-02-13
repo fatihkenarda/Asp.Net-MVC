@@ -12,6 +12,7 @@
           <Property Name="KategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ad" Type="nvarchar" MaxLength="50" />
           <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gecerli" Type="bit" />
         </EntityType>
         <EntityType Name="Kullanici">
           <Key>
@@ -70,7 +71,7 @@
           <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Stok" Type="int" />
           <Property Name="Populer" Type="bit" />
-          <Property Name="Resim" Type="nvarchar" MaxLength="50" />
+          <Property Name="Resim" Type="nvarchar(max)" />
           <Property Name="KategoriID" Type="int" />
         </EntityType>
         <Association Name="FK_Satis_Kullanici">
@@ -141,6 +142,7 @@
           <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Urun" Relationship="Self.FK_Urun_Kategori" FromRole="Kategori" ToRole="Urun" />
+          <Property Name="Gecerli" Type="Boolean" />
         </EntityType>
         <EntityType Name="Kullanici">
           <Key>
@@ -190,7 +192,7 @@
           <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Stok" Type="Int32" />
           <Property Name="Populer" Type="Boolean" />
-          <Property Name="Resim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="KategoriID" Type="Int32" />
           <NavigationProperty Name="Kategori" Relationship="Self.FK_Urun_Kategori" FromRole="Urun" ToRole="Kategori" />
         </EntityType>
@@ -272,6 +274,7 @@
           <EntitySetMapping Name="Kategori">
             <EntityTypeMapping TypeName="TakipSistemiModel.Kategori">
               <MappingFragment StoreEntitySet="Kategori">
+                <ScalarProperty Name="Gecerli" ColumnName="Gecerli" />
                 <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />

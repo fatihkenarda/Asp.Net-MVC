@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Kategori">
       <EntityTypeMapping TypeName="TakipSistemiModel.Kategori">
         <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="Gecerli" ColumnName="Gecerli" />
           <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
           <ScalarProperty Name="Ad" ColumnName="Ad" />
           <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />

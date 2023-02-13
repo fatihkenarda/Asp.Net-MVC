@@ -23,6 +23,7 @@ namespace UrunStokTakip.Models
         public int KategoriID { get; set; }
         public string Ad { get; set; }
         public string Aciklama { get; set; }
+        public Nullable<bool> Gecerli { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Urun> Urun { get; set; }

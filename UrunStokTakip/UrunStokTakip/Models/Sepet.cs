@@ -23,5 +23,6 @@ namespace UrunStokTakip.Models
         public Nullable<int> KullaniciID { get; set; }
     
         public virtual Kullanici Kullanici { get; set; }
+        public virtual Urun Urun { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using UrunStokTakip.Models;
 
@@ -15,6 +17,7 @@ namespace UrunStokTakip.Controllers
         [Authorize]
         public ActionResult Index(string ara)
         {
+            var kAdi = User.Identity.Name;
             var list = db.Urun.ToList();
             if (!string.IsNullOrEmpty(ara))
             {
@@ -117,6 +120,17 @@ namespace UrunStokTakip.Controllers
                 ViewBag.count = count;
             }
             return PartialView();
+        }
+
+        public ActionResult StokGrafik()
+        {
+            ArrayList UrunAd = new ArrayList();
+            ArrayList UrunStok = new ArrayList();
+            var veriler = db.Urun.ToList();
+            veriler.ToList().ForEach(x=>UrunAd.Add(x.Ad));
+            veriler.ToList().ForEach(x => UrunStok.Add(x.Stok));
+            var grafik = new Chart(width: 500, height:500).AddTitle("Ürün-Stok Grafiği").AddSeries(chartType:"Column", name:"Ad",xValue:UrunAd,yValues:UrunStok);
+            return File(grafik.ToWebImage().GetBytes(), "image/jpeg");
         }
     }
 }

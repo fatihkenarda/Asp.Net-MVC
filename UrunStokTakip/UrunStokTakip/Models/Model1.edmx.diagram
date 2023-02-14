@@ -9,11 +9,12 @@
         <EntityTypeShape EntityType="TakipSistemiModel.Kullanici" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TakipSistemiModel.Satis" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TakipSistemiModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TakipSistemiModel.Urun" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="TakipSistemiModel.FK_Urun_Kategori" ManuallyRouted="false" />
         <AssociationConnector Association="TakipSistemiModel.FK_Satis_Kullanici" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TakipSistemiModel.Sepet" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="TakipSistemiModel.Sepet" Width="1.5" PointX="10.25" PointY="1.875" />
+        <EntityTypeShape EntityType="TakipSistemiModel.Urun" Width="1.5" PointX="8" PointY="1" />
+        <AssociationConnector Association="TakipSistemiModel.FK_Urun_Kategori" />
         <AssociationConnector Association="TakipSistemiModel.FK_Sepet_Kullanici" />
+        <AssociationConnector Association="TakipSistemiModel.FK_Sepet_Urun" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

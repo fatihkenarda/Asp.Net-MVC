@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Session["Ad"]</h2>
+
+<h3>Sepetim</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ürün Bilgisi</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Tarih</th>
+            <th>Resim</th>
+            <th>Sil</th>
+            <th>Satın Al</th>
+        </tr>
+    </thead>
+    <tody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Urun.Ad</td>
+                <td>
+                    <div>
+                        @Html.ActionLink("-", "azalt", new { ID = item.SepetID }, new { @class = "btn btn-info btn-sm azalt" })
+                    </div>
+                    <div>
+                        <input type="text" class="txt" data_id="@item.SepetID" value="@item.Adet" />
+                    </div>
+                    <div>
+                        @Html.ActionLink("+", "arttir", new { ID = item.SepetID }, new { @class = "btn btn-info btn-sm arttir" })
+                    </div>
+                </td>
+
+                <td>@item.Urun.Fiyat</td>
+                <td>@Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyy")</td>
+                <td><img src="~/Content/Image/@item.Urun.Resim" width="100" height="100" /></td>
+                @if (User.IsInRole("U"))
+                {
+                    <td>@Html.ActionLink("Sil", "Sil", new { ID = item.SepetID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz ?')" })</td>
+                    <td><a href="/Satislar/SatinAl/@item.SepetID" class="btn btn-success">Satın Al</a></td>
+                }
+
+            </tr>
+        }
+    </tody>
+</table>
+
+<div class="container">
+    @ViewBag.Tutar
+</div>
+<br />
+<div class="form-group">
+    <a href="/Satislar/HepsiniSatinAl" class="btn btn-success form-control">Tümünü Satın Al</a>
+</div>
+<div class="form-group">
+    <a href="/Sepet/HepsiniSil" class="btn btn-danger form-control">Tümünü Sil</a>
+</div>
+
+<style>
+    .txt {
+        line-height: 18px;
+        width: 50px !important;
+        height: 32px;
+        font-size: 14px;
+        text-align: center;
+        border: solid 1px #ccc;
+        margin-left: 23px;
+    }
+
+    .arttir {
+        display: block;
+        cursor: pointer;
+        border: solid 1px #ccc;
+        position: absolute;
+        margin-top: -32px;
+        margin-left: 75px;
+    }
+
+    .azalt {
+        display: block;
+        cursor: pointer;
+        border: solid 1px #ccc;
+        position: absolute;
+        margin-left: 95px;
+    }
+</style>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(function () {
+        $('.txt').on('change', function () {
+            var miktar = $(this).val();
+            var sepetid = $(this).attr('data_id');
+            $.ajax({
+                url: '/Sepet/AdetYaz',
+                data: { id: sepetid, miktari: miktar },
+                success: function (res) {
+                    document.location.reload();
+                }
+            });
+        });
+    });
+</script>

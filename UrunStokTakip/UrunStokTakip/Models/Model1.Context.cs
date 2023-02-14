@@ -29,7 +29,7 @@ namespace UrunStokTakip.Models
         public virtual DbSet<Kullanici> Kullanici { get; set; }
         public virtual DbSet<Satis> Satis { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Urun> Urun { get; set; }
         public virtual DbSet<Sepet> Sepet { get; set; }
+        public virtual DbSet<Urun> Urun { get; set; }
     }
 }

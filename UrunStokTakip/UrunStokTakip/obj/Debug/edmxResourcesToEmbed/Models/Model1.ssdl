@@ -93,6 +93,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Sepet_Urun">
+    <End Role="Urun" Type="Self.Urun" Multiplicity="0..1" />
+    <End Role="Sepet" Type="Self.Sepet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urun">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Sepet">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Urun_Kategori">
     <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
     <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
@@ -118,6 +130,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Sepet_Kullanici" Association="Self.FK_Sepet_Kullanici">
       <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Sepet" EntitySet="Sepet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sepet_Urun" Association="Self.FK_Sepet_Urun">
+      <End Role="Urun" EntitySet="Urun" />
       <End Role="Sepet" EntitySet="Sepet" />
     </AssociationSet>
     <AssociationSet Name="FK_Urun_Kategori" Association="Self.FK_Urun_Kategori">

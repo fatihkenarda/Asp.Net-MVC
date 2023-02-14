@@ -49,20 +49,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Urun">
-      <EntityTypeMapping TypeName="TakipSistemiModel.Urun">
-        <MappingFragment StoreEntitySet="Urun">
-          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
-          <ScalarProperty Name="Ad" ColumnName="Ad" />
-          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
-          <ScalarProperty Name="Stok" ColumnName="Stok" />
-          <ScalarProperty Name="Populer" ColumnName="Populer" />
-          <ScalarProperty Name="Resim" ColumnName="Resim" />
-          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Sepet">
       <EntityTypeMapping TypeName="TakipSistemiModel.Sepet">
         <MappingFragment StoreEntitySet="Sepet">
@@ -73,6 +59,20 @@
           <ScalarProperty Name="Adet" ColumnName="Adet" />
           <ScalarProperty Name="UrunID" ColumnName="UrunID" />
           <ScalarProperty Name="SepetID" ColumnName="SepetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun">
+      <EntityTypeMapping TypeName="TakipSistemiModel.Urun">
+        <MappingFragment StoreEntitySet="Urun">
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+          <ScalarProperty Name="Populer" ColumnName="Populer" />
+          <ScalarProperty Name="Stok" ColumnName="Stok" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

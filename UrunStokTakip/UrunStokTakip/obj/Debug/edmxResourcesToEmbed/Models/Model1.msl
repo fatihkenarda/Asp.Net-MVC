@@ -25,19 +25,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Satis">
-      <EntityTypeMapping TypeName="TakipSistemiModel.Satis">
-        <MappingFragment StoreEntitySet="Satis">
-          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
-          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
-          <ScalarProperty Name="Adet" ColumnName="Adet" />
-          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="Resim" ColumnName="Resim" />
-          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="TakipSistemiModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -59,6 +46,19 @@
           <ScalarProperty Name="Adet" ColumnName="Adet" />
           <ScalarProperty Name="UrunID" ColumnName="UrunID" />
           <ScalarProperty Name="SepetID" ColumnName="SepetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satis">
+      <EntityTypeMapping TypeName="TakipSistemiModel.Satis">
+        <MappingFragment StoreEntitySet="Satis">
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

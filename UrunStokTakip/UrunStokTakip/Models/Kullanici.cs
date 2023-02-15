@@ -17,8 +17,8 @@ namespace UrunStokTakip.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kullanici()
         {
-            this.Satis = new HashSet<Satis>();
             this.Sepet = new HashSet<Sepet>();
+            this.Satis = new HashSet<Satis>();
         }
     
         public int KullaniciID { get; set; }
@@ -31,8 +31,8 @@ namespace UrunStokTakip.Models
         public string Rol { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Satis> Satis { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sepet> Sepet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Satis> Satis { get; set; }
     }
 }

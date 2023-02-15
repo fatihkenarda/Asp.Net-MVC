@@ -78,6 +78,20 @@ namespace UrunStokTakip.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult HepsiniSil()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var kullaniciAdi = User.Identity.Name;
+                var kullanici = db.Kullanici.FirstOrDefault(x => x.Email == kullaniciAdi);
+                var model = db.Sepet.Where(x => x.KullaniciID == kullanici.KullaniciID).ToList();
+                db.Sepet.RemoveRange(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return HttpNotFound();
+        }
+
         public ActionResult SepetCount(int? count)
         {
             if (User.Identity.IsAuthenticated)
@@ -97,8 +111,9 @@ namespace UrunStokTakip.Controllers
         public ActionResult arttir(int ID)
         {
             var model = db.Sepet.Find(ID);
+            var modelUrun = db.Urun.FirstOrDefault(x=>x.UrunID==model.UrunID);
             model.Adet++;
-            model.Fiyat = model.Fiyat * model.Adet;
+            model.Fiyat = modelUrun.Fiyat * model.Adet;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -106,13 +121,14 @@ namespace UrunStokTakip.Controllers
         public ActionResult azalt(int ID)
         {
             var model = db.Sepet.Find(ID);
+            var modelUrun = db.Urun.FirstOrDefault(x => x.UrunID == model.UrunID);
             if (model.Adet==1)
             {
                 db.Sepet.Remove(model);
                 db.SaveChanges();
             }
             model.Adet--;
-            model.Fiyat = model.Fiyat * model.Adet;
+            model.Fiyat = modelUrun.Fiyat * model.Adet;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

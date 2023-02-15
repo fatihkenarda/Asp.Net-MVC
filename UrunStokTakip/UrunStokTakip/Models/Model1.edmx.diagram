@@ -5,15 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2098273273f9426bb85d0bad696512f9" Name="Diagram1">
-        <EntityTypeShape EntityType="TakipSistemiModel.Kategori" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TakipSistemiModel.Kategori" Width="1.5" PointX="6.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TakipSistemiModel.Kullanici" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TakipSistemiModel.Satis" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TakipSistemiModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="TakipSistemiModel.FK_Satis_Kullanici" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TakipSistemiModel.Sepet" Width="1.5" PointX="10.25" PointY="1.875" />
-        <EntityTypeShape EntityType="TakipSistemiModel.Urun" Width="1.5" PointX="8" PointY="1" />
-        <AssociationConnector Association="TakipSistemiModel.FK_Urun_Kategori" />
+        <EntityTypeShape EntityType="TakipSistemiModel.Sepet" Width="1.5" PointX="9.75" PointY="1.125" />
         <AssociationConnector Association="TakipSistemiModel.FK_Sepet_Kullanici" />
+        <EntityTypeShape EntityType="TakipSistemiModel.Satis" Width="1.5" PointX="3.875" PointY="1.125" />
+        <EntityTypeShape EntityType="TakipSistemiModel.Urun" Width="1.5" PointX="9.375" PointY="4.625" />
+        <AssociationConnector Association="TakipSistemiModel.FK_Urun_Kategori" />
+        <AssociationConnector Association="TakipSistemiModel.FK_Satis_Kullanici" />
+        <AssociationConnector Association="TakipSistemiModel.FK_Satis_Urun" />
         <AssociationConnector Association="TakipSistemiModel.FK_Sepet_Urun" />
       </Diagram>
     </edmx:Diagrams>

@@ -43,7 +43,7 @@
                 @if (User.IsInRole("U"))
                 {
                     <td>@Html.ActionLink("Sil", "Sil", new { ID = item.SepetID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz ?')" })</td>
-                    <td><a href="/Satislar/SatinAl/@item.SepetID" class="btn btn-success">Satın Al</a></td>
+                    <td><a href="/Satis/SatinAl/@item.SepetID" class="btn btn-success">Satın Al</a></td>
                 }
 
             </tr>
@@ -56,7 +56,7 @@
 </div>
 <br />
 <div class="form-group">
-    <a href="/Satislar/HepsiniSatinAl" class="btn btn-success form-control">Tümünü Satın Al</a>
+    <a href="/Satis/HepsiniSatinAl" class="btn btn-success form-control">Tümünü Satın Al</a>
 </div>
 <div class="form-group">
     <a href="/Sepet/HepsiniSil" class="btn btn-danger form-control">Tümünü Sil</a>
@@ -87,7 +87,7 @@
         cursor: pointer;
         border: solid 1px #ccc;
         position: absolute;
-        margin-left: 95px;
+        margin-left: -5px;
     }
 </style>
 

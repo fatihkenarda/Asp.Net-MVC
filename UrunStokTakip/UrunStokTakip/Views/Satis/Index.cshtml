@@ -1,0 +1,37 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<UrunStokTakip.Models.Satis>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Satış Listesi</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Ad</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Resim</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SatisID</td>
+                <td>@item.Urun.Ad</td>
+                <td>@item.Adet</td>
+                <td>@item.Fiyat</td>
+                <td><img src="~/Content/Image/@item.Urun.Resim" width="100" height="100" /></td>
+                <td>@Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager(Model, sayfa => Url.Action("Index", new { sayfa}),PagedListRenderOptions.Classic)

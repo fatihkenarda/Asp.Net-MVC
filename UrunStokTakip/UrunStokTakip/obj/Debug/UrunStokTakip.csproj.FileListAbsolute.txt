@@ -144,3 +144,7 @@ C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\obj\Debu
 C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\obj\Debug\UrunStokTakip.csproj.CopyComplete
 C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\obj\Debug\UrunStokTakip.dll
 C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\obj\Debug\UrunStokTakip.pdb
+C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\bin\PagedList.dll
+C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\bin\PagedList.Mvc.dll
+C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\bin\PagedList.xml
+C:\Users\Fatih\Documents\GitHub\Asp.Net-MVC\UrunStokTakip\UrunStokTakip\bin\PagedList.Mvc.xml

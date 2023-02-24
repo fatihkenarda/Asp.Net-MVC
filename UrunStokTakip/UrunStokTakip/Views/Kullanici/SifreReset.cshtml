@@ -1,0 +1,25 @@
+﻿@model UrunStokTakip.Models.Kullanici
+@{
+    ViewBag.Title = "SifreReset";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h3>@ViewBag.uyari</h3>
+
+@using (Html.BeginForm("SifreReset", "Kullanici", FormMethod.Post))
+{
+    <br />
+    <br />
+    <div class="container">
+        <div class="form-group">
+            <div class="form-group">
+                <input type="email" name="eposta" placeholder="E-mail adresiniz" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Şifreyi sıfırla" />
+            </div>
+        </div>
+    </div>
+}

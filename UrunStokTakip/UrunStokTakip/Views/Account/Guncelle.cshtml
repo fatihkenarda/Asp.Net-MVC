@@ -1,0 +1,54 @@
+﻿@model UrunStokTakip.Models.Kullanici
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<form method="post">
+    <div class="container">
+        <br />
+        <div class="form-group">
+            <label>Ad</label>
+            <input type="text" name="Ad" class="form-control" value="@Model.Ad" required/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Soyad</label>
+            <input type="text" name="Soyad" class="form-control" value="@Model.Soyad" required/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Kullanıcı Adı</label>
+            <input type="text" name="KullaniciAd" class="form-control" value="@Model.KullaniciAd" required/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="Email" class="form-control" value="@Model.Email" required/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Şifre</label>
+            <input id="txtSifre" type="text" name="Sifre" class="form-control" value="@Model.Sifre" required/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Şifre Tekrar</label>
+            <input id="txtSifreTekrar" type="text" name="SifreTekrar" class="form-control" value="@Model.SifreTekrar" required/>
+        </div>
+        <br />
+        <button id="btnGuncelle" class="btn btn-primary" type="submit">Güncelle</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript">
+            $('#btnGuncelle').click(function () {
+                if (document.getElementById('txtSifre').value != document.getElementById('txtSifreTekrar').value) {
+                    alert("Şifre ve Şifre Tekrar aynı olmalı");
+                }
+        });
+        </script>
+
+</form>
+
+

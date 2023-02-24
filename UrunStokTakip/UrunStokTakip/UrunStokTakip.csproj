@@ -121,6 +121,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Image\1Fotoğraf-Makinesi.png" />
+    <Content Include="Content\Image\61d2f85b92b57c0004c64745.png" />
     <Content Include="Content\Image\62021a4f3dca22.90470433_hegqlpiofjnkm_500.jpg" />
     <Content Include="Content\Image\samsung-galaxy-s20-5g-r1.jpg" />
     <Content Include="Content\PagedList.css" />
@@ -700,6 +701,7 @@
     <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="libman.json" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -707,7 +709,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="libman.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -720,6 +721,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\SepetController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
@@ -784,6 +786,8 @@
     <Content Include="Views\Satis\islem.cshtml" />
     <Content Include="Views\Satis\SatinAl.cshtml" />
     <Content Include="Views\Satis\HepsiniSatinAl.cshtml" />
+    <Content Include="Views\Account\Guncelle.cshtml" />
+    <Content Include="Views\Kullanici\SifreReset.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

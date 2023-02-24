@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Security;
 using UrunStokTakip.Models;
@@ -58,6 +61,32 @@ namespace UrunStokTakip.Controllers
             data.Rol = "U";
             db.SaveChanges();
             return RedirectToAction("Login","Account");
+        }
+
+        public ActionResult Guncelle()
+        {
+            var kullanicilar = (String)Session["Mail"];
+            var degerler = db.Kullanici.FirstOrDefault(x=>x.Email == kullanicilar);
+            return View(degerler);
+        }
+
+        [HttpPost]
+        public ActionResult Guncelle(Kullanici data)
+        {
+            var kullanicilar = (String)Session["Mail"];
+            var user = db.Kullanici.Where(x=>x.Email == kullanicilar).FirstOrDefault();
+            user.Ad = data.Ad;
+            user.Soyad = data.Soyad;
+            user.KullaniciAd = data.KullaniciAd;
+            user.Email = data.Email;
+            user.Sifre = data.Sifre;
+            user.SifreTekrar = data.SifreTekrar;
+            if (user.Sifre!=user.SifreTekrar)
+            {
+                return RedirectToAction("Guncelle", "Account");
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index","Home");
         }
     }
 }

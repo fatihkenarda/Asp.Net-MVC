@@ -18,13 +18,13 @@
             <ul class="nav navbar-nav">
                 @if (User.IsInRole("A"))
                 {
-                    <li><a href="/Kullanici/Index">Kullanıcı</a></li>
-                    <li><a href="/TümSatislar/Index">Tüm Satışlar</a></li>
+                    <li><a href="/Kategori/Index">Kategoriler</a></li>
+                    <li><a href="/TumSatislar/Index">Tüm Satışlar</a></li>
                     <li><a href="/Urun/KritikStok">Kritik Stok @Html.Action("StokCount", "Urun")</a></li>
                     <li><a href="/Urun/StokGrafik">Stok Grafik</a></li>
+                    <li><a href="/Istatistik/Index">İstatistikler</a></li>
                 }
 
-                <li><a href="/Kategori/Index">Kategoriler</a></li>
                 <li><a href="/Account/Guncelle">@Session["Ad"] @Session["Soyad"]</a></li>
                 <li><a href="/Urun/Index">Ürünler</a></li>
                 @if (User.IsInRole("U"))
